@@ -5,8 +5,11 @@ const cliente = require('../models/cliente')
 
 const db = require('../db/db')
 
-router.get('/', (req, res), () => {
-
+router.get('/', (req, res) => {
+    models.cliente.findAll()
+        .then(resp => {
+            res.send(resp)
+        })
 })
 
 //middleware para las rutas de usuario
